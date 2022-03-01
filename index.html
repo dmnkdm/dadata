@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+    <template id="form-template">
+        <style>
+            p {
+                margin:0 0 10px 0;
+            }
+                        
+            .container,
+            .result {
+                max-width: 1200px;
+                margin: 20px auto;
+            }
+            
+            .container-label {
+                margin-bottom:5px;
+            }
+
+            input {
+                font-size: 16px;
+                padding: 8px;
+                border-radius: 4px;
+                box-sizing: border-box;
+                border: 1px solid #d9d9d9;
+            }
+
+            input:focus {
+                outline: 1px solid #134599;
+            }
+
+            .row {
+                padding: 5px 15px;
+            }
+
+            .row label {
+                display: block;
+                margin-bottom: 3px;
+            }
+
+            .row input,
+            .row textarea {
+                width: 100%;
+            }
+
+            .suggestions-wrapper {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                list-style: none;
+                background: #fff;
+                padding: 0;
+                margin: 0;
+                border: 1px solid #d9d9d9;
+                display: none;
+            }
+
+            .suggestions-wrapper>li {
+                padding: 5px 10px;
+                border-bottom: 1px solid #d9d9d9;
+                cursor: pointer;
+                font-size: 12px;
+                line-height: 18px;
+            }
+
+            .suggestions-wrapper>li:hover {
+                background: #efefef;
+            }
+
+            .suggestions-block {
+                position: relative;
+            }
+
+            .suggestions-item-inn {
+                color: #555;
+            }
+        </style>
+
+        <section class="container">
+            <div class="row">
+                <div class="container-label"><strong>Компания или ИП</strong></div>
+                <div class="suggestions-block">
+                    <input class="js-input" type="text" placeholder="Введите название, ИНН, ОГРН или адрес организации" />
+                    <ul class="js-suggestions suggestions-wrapper"></ul>
+                </div>
+            </div>
+        </section>
+        <section class="result">
+            <div class="row">
+                <p id="type"></p>
+            </div>
+            <div class="row">
+                <label>Краткое наименование</label>
+                <input id="name_short">
+            </div>
+            <div class="row">
+                <label>Полное наименование</label>
+                <input id="name_full">
+            </div>
+            <div class="row">
+                <label>ИНН / КПП</label>
+                <input id="inn_kpp">
+            </div>
+            <div class="row">
+                <label>Адрес</label>
+                <input id="address">
+            </div>
+        </section>
+    </template>
+
+    <form-suggestions></form-suggestions>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
